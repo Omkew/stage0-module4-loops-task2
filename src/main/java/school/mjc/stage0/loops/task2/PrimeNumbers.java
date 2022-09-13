@@ -2,24 +2,21 @@ package school.mjc.stage0.loops.task2;
 
 public class PrimeNumbers {
     public void printPrimeNumbers(int printToInclusive) {
-        int count = 0;
-        int number = 0;
-        int i = 0;
+        int i = 2;
+        int j = 2;
+        double max = Math.sqrt(printToInclusive);
+        boolean flag = true;
 
-        while (number <=printToInclusive){
-            count = 0;
-            i = 2;
-            while (i <= number / 2){
-                if (number % i == 0){
-                    count++;
+        while (i < printToInclusive){
+            while (j <= max){
+                if(i % j == 0){
+                    flag = false;
                     break;
-                }
-                i++;
+                }j++;
+            }i++;
+            if (flag){
+                System.out.println(i);
             }
-            if (count == 0 && number != 1){
-                System.out.println(number);
-            }
-            number++;
         }
     }
 }
